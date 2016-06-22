@@ -16,7 +16,7 @@ module.exports = {
       isDone: false
     }).then(function (todo) {
       console.log(todo);
-      return res.ok();
+      return res.json(200, {todo:todo});
     }).fail(function (err) {
       console.log(err);
       return res.negotiate(err);
@@ -37,7 +37,7 @@ module.exports = {
     Todo.update({id: id}, req.body)
       .then(function (updatedTodo) {
         if (!updatedTodo[0]) return res.json(404, {err: 'todo not found!'});
-        return res.json(200, {todo: updatedTodo});
+        return res.json(200, {todo: updatedTodo[0]});
       })
       .fail(function (err) {
         return res.negotiate(err);

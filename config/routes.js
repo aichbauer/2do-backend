@@ -25,6 +25,5 @@ module.exports.routes = {
   'POST /todo': 'TodoController.createTodo',
   'GET /todos': 'TodoController.getTodos',
   'PUT /todo/:todoid': 'TodoController.updateTodo',
-  'DELETE /todo:id': 'TodoController.deleteTodo'
-
+  'DELETE /todo/:id': 'TodoController.deleteTodo'
 };
